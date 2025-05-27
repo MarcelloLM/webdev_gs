@@ -11,6 +11,8 @@ const themes = {
 
 function setTheme(color) {
   document.documentElement.style.setProperty('--background-color', color);
+  localStorage.setItem("themeColor", color); 
+
 
   let fontLink = document.querySelector("link[href*='fonts.googleapis']");
   if (fontLink) fontLink.remove();
@@ -21,15 +23,15 @@ function setTheme(color) {
   if (color === "#f9f9f9") {
     newFontLink.href = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap";
     document.body.style.fontFamily = "'Open Sans', sans-serif";
-    document.body.style.color = "#333"; // texto escuro
+    document.body.style.color = "#333";
   } else if (color === "#1e1e1e") {
     newFontLink.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap";
     document.body.style.fontFamily = "'Montserrat', sans-serif";
-    document.body.style.color = "#f1f1f1"; // texto claro
+    document.body.style.color = "#f1f1f1";
   } else if (color === "#e0f7fa") {
     newFontLink.href = "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap";
     document.body.style.fontFamily = "'Quicksand', sans-serif";
-    document.body.style.color = "#222"; // texto escuro
+    document.body.style.color = "#222";
   }
 
   document.head.appendChild(newFontLink);
@@ -89,3 +91,12 @@ function showResult() {
   const container = document.getElementById("quiz-container");
   container.innerHTML = `<p>Você acertou ${score} de ${quizData.length} perguntas.</p>`;
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("themeColor");
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme("#f9f9f9"); // tema padrão
+  }
+});
