@@ -11,7 +11,28 @@ const themes = {
 
 function setTheme(color) {
   document.documentElement.style.setProperty('--background-color', color);
+
+  
+  let fontLink = document.querySelector("link[href*='fonts.googleapis']");
+  if (fontLink) fontLink.remove(); 
+
+  const newFontLink = document.createElement("link");
+  newFontLink.rel = "stylesheet";
+
+  if (color === "#f9f9f9") {
+    newFontLink.href = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap";
+    document.body.style.fontFamily = "'Open Sans', sans-serif";
+  } else if (color === "#1e1e1e") {
+    newFontLink.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap";
+    document.body.style.fontFamily = "'Montserrat', sans-serif";
+  } else if (color === "#e0f7fa") {
+    newFontLink.href = "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap";
+    document.body.style.fontFamily = "'Quicksand', sans-serif";
+  }
+
+  document.head.appendChild(newFontLink);
 }
+
 
 const quizData = [
   {
