@@ -72,16 +72,21 @@
       <div id="quiz-container"></div>
       <button id="start-quiz">Iniciar Quiz</button>
     </section>
+
+    <section id="temas">
+      <h2>Personalizar Tema</h2>
+      <div>
+        <button onclick="setTheme('#f9f9f9')">Claro</button>
+        <button onclick="setTheme('#1e1e1e')">Escuro</button>
+        <button onclick="setTheme('#e0f7fa')">Aqua</button>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 KenzoSafety | Desenvolvido para Global Solution FIAP</p>
   </footer>
 
-  <script>
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-      document.getElementById("menu").classList.toggle("active");
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
