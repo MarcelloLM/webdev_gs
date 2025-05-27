@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KenzoSafety - Solução Contra Enchentes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">KenzoSafety</div>
+      <button id="menu-toggle">&#9776;</button>
+      <ul id="menu">
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#objetivos">Objetivos</a></li>
+        <li><a href="#publico">Público</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#cotidiano">Cotidiano</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="problema">
+      <h2>O Problema</h2>
+      <p>Enchentes recorrentes, falta de alertas e dados confiáveis afetam milhares de brasileiros.</p>
+      <p>A população não possui ferramentas para prevenção ou decisão segura.</p>
+      <img src="img/problema.png" alt="Região urbana alagada">
+    </section>
+
+    <section id="tecnologias">
+      <h2>Tecnologias Utilizadas</h2>
+      <p>IoT, API meteorológica, banco de dados e simulação em Wokwi.</p>
+      <p>Front-end responsivo, Google Fonts e Flexbox.</p>
+      <img src="img/tecnologias.png" alt="Representação de tecnologias web e sensores">
+    </section>
+
+    <section id="objetivos">
+      <h2>Objetivos</h2>
+      <p>Reduzir prejuízos e salvar vidas com informação precisa e acessível.</p>
+      <p>Alerta preventivo e análise de risco em tempo real.</p>
+      <img src="img/objetivos.png" alt="Objetivos representados por ícones de segurança e tecnologia">
+    </section>
+
+    <section id="publico">
+      <h2>Público-Alvo</h2>
+      <p>Moradores de áreas de risco, prefeituras e defesas civis.</p>
+      <p>Pessoas que desejam tomar decisões com base em dados.</p>
+      <img src="img/publico.png" alt="Pessoas observando previsão do tempo em celular">
+    </section>
+
+    <section id="beneficios">
+      <h2>Benefícios</h2>
+      <p>Visualização interativa, alertas rápidos, dados confiáveis.</p>
+      <p>Solução leve, acessível e com bom custo-benefício.</p>
+      <img src="img/beneficios.png" alt="Benefícios tecnológicos representados com ícones de apps">
+    </section>
+
+    <section id="cotidiano">
+      <h2>Impacto no Cotidiano</h2>
+      <p>Consulta por bairro, histórico de enchentes e alertas por celular.</p>
+      <p>Facilidade para agir antes da ocorrência do evento.</p>
+      <img src="img/cotidiano.png" alt="Pessoa recebendo alerta em smartphone">
+    </section>
+
+    <section id="quiz">
+      <h2>Quiz Educativo</h2>
+      <div id="quiz-container"></div>
+      <button id="start-quiz">Iniciar Quiz</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KenzoSafety | Desenvolvido para Global Solution FIAP</p>
+  </footer>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("menu").classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
