@@ -37,7 +37,7 @@ function setTheme(color) {
   document.head.appendChild(newFontLink);
 }
 
-
+// Quiz 
 const quizData = [
   {
     pergunta: "Qual é uma das causas mais comuns de enchentes urbanas?",
@@ -48,9 +48,49 @@ const quizData = [
     pergunta: "O que o termo IoT significa?",
     opcoes: ["Internet das Coisas", "Interface Online Técnica", "Infraestrutura de Ondas Terrestres"],
     correta: 0
+  },
+  {
+    pergunta: "Qual órgão brasileiro monitora riscos de desastres naturais?",
+    opcoes: ["IBGE", "CEMADEN", "INMET"],
+    correta: 1
+  },
+  {
+    pergunta: "Sensores de nível de água podem ajudar a:",
+    opcoes: ["Medir a poluição do ar", "Prever deslizamentos", "Detectar enchentes iminentes"],
+    correta: 2
+  },
+  {
+    pergunta: "Qual tecnologia permite prever enchentes com até 48h de antecedência?",
+    opcoes: ["Radar meteorológico", "Inteligência Artificial", "Wi-Fi público"],
+    correta: 1
+  },
+  {
+    pergunta: "O uso de imagens de satélite é essencial para:",
+    opcoes: ["Mapear áreas de risco", "Aumentar a velocidade da internet", "Transmitir rádio FM"],
+    correta: 0
+  },
+  {
+    pergunta: "O aplicativo Alerta Rio serve para:",
+    opcoes: ["Mostrar eventos culturais", "Emitir alertas de emergência", "Vender passagens de ônibus"],
+    correta: 1
+  },
+  {
+    pergunta: "Big Data pode ajudar em situações de enchente ao:",
+    opcoes: ["Prever o humor das pessoas", "Mapear padrões de mobilidade", "Aumentar preços de aplicativos"],
+    correta: 1
+  },
+  {
+    pergunta: "O que significa um sistema de evacuação dinâmico?",
+    opcoes: ["Com rota fixa", "Com rotas ajustáveis em tempo real", "Com rotas invisíveis"],
+    correta: 1
+  },
+  {
+    pergunta: "Modelagem BIM e GIS serve para:",
+    opcoes: ["Criar redes sociais", "Planejar cidades resilientes", "Enviar mensagens automáticas"],
+    correta: 1
   }
-  
 ];
+
 
 let currentQuestion = 0;
 let score = 0;
@@ -60,6 +100,7 @@ document.getElementById("start-quiz").addEventListener("click", startQuiz);
 function startQuiz() {
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
+  document.getElementById("start-quiz").style.display = "none";
   showQuestion();
 }
 
@@ -90,6 +131,16 @@ function showQuestion() {
 function showResult() {
   const container = document.getElementById("quiz-container");
   container.innerHTML = `<p>Você acertou ${score} de ${quizData.length} perguntas.</p>`;
+
+  const restartBtn = document.createElement("button");
+  restartBtn.textContent = "Reiniciar teste";
+  restartBtn.onclick = () => {
+    score = 0;
+    currentQuestion = 0;
+    startQuiz();
+  };
+
+  container.appendChild(restartBtn);
 }
 
 let slideIndex = 0;
