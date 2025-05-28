@@ -11,6 +11,7 @@
   box-sizing: border-box;
 }
 
+/* estilo gloal - body */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
@@ -18,12 +19,14 @@ body {
   line-height: 1.6;
 }
 
+/* cabeçalho */
 header {
   background-color: var(--primary-color);
   padding: 1rem;
   color: #fff;
 }
 
+/* nav e menu */
 nav {
   display: flex;
   justify-content: space-between;
@@ -64,6 +67,7 @@ ul#menu li a.active {
   border-radius: 5px;
 }
 
+/* seções principais */
 main section {
   padding: 2rem;
   display: flex;
@@ -80,6 +84,7 @@ main section img {
   border-radius: 8px;
 }
 
+/* rodape */
 footer {
   background-color: var(--primary-color);
   color: #fff;
@@ -88,6 +93,7 @@ footer {
   margin-top: 2rem;
 }
 
+/* slideshow das imagens */
 .slideshow-container {
   position: relative;
   max-width: 700px;
@@ -100,6 +106,7 @@ footer {
   border-radius: 8px;
 }
 
+/* Formulario de contato */
 #contato form {
   display: flex;
   flex-direction: column;
