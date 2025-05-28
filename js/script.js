@@ -92,11 +92,54 @@ function showResult() {
   container.innerHTML = `<p>Você acertou ${score} de ${quizData.length} perguntas.</p>`;
 }
 
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlides() {
+  slides.forEach(slide => (slide.style.display = "none"));
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 3000); 
+}
+
+// Validação de formulário de contato
+const form = document.getElementById("contato-form");
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+    const feedback = document.getElementById("form-feedback");
+
+    if (!nome || !email || !mensagem) {
+      feedback.textContent = "Por favor, preencha todos os campos.";
+      feedback.style.color = "red";
+      return;
+    }
+
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailValido) {
+      feedback.textContent = "E-mail inválido.";
+      feedback.style.color = "red";
+      return;
+    }
+
+    feedback.textContent = "Mensagem enviada com sucesso!";
+    feedback.style.color = "green";
+    this.reset();
+  });
+}
+
+
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("themeColor");
   if (savedTheme) {
     setTheme(savedTheme);
   } else {
-    setTheme("#f9f9f9"); // tema padrão
+    setTheme("#f9f9f9");
   }
+  showSlides(); 
 });
