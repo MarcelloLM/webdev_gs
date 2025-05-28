@@ -88,6 +88,62 @@ footer {
   margin-top: 2rem;
 }
 
+.slideshow-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  border-radius: 8px;
+}
+
+#contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#contato input,
+#contato textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+#contato textarea {
+  min-height: 120px;
+}
+
+#contato button {
+  padding: 0.8rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#contato button:hover {
+  background-color: #005fa3;
+}
+
+#form-feedback {
+  font-weight: bold;
+}
+
+
 /* Responsivo */
 @media (max-width: 768px) {
   ul#menu {
