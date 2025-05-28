@@ -1,3 +1,4 @@
+// Ativa o menu hamburguer ao clicar no botão em telas pequenas
 document.getElementById("menu-toggle").addEventListener("click", function () {
   document.getElementById("menu").classList.toggle("active");
 });
@@ -103,7 +104,7 @@ function startQuiz() {
   document.getElementById("start-quiz").style.display = "none";
   showQuestion();
 }
-
+// Exibe a pergunta atual e opções de resposta
 function showQuestion() {
   const container = document.getElementById("quiz-container");
   const q = quizData[currentQuestion];
@@ -128,6 +129,7 @@ function showQuestion() {
   });
 }
 
+// Mostra o resultado final e botão para reiniciar
 function showResult() {
   const container = document.getElementById("quiz-container");
   container.innerHTML = `<p>Você acertou ${score} de ${quizData.length} perguntas.</p>`;
